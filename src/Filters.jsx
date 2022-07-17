@@ -13,8 +13,7 @@ function Filters() {
           type="radio"
           name="group1"
           onChange={productDispatch({
-            type: "SORT_BY_GENDER",
-            payload: "hightolow"
+            type: "SORT_BY_GENDER"
           })}
         />
         <label htmlFor="group1">Men</label>
