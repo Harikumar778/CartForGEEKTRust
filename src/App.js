@@ -4,7 +4,6 @@ import { CartState } from "./Context";
 import Filters from "./Filters";
 import Navbar from "./Navbar";
 import Single from "./Single";
-
 import "./styles.css";
 import UseFetch from "./UseFetch";
 let BASE = `https://api.github.com/users`;
