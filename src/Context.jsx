@@ -44,8 +44,21 @@ function reducer(state, { type, payload }) {
   }
 }
 
+function productReducer(state, { type, payload }) {
+  switch (type) {
+    case "SORT_BY_GENDER":
+      return {
+        ...state
+      };
+  }
+}
+
 function Context({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const [productState, productDispatch] = useReducer(productReducer, {
+    gender: ""
+  });
 
   useEffect(() => {
     dispatch({ type: ACTIONS.API_REQ });
@@ -61,7 +74,11 @@ function Context({ children }) {
       });
   }, []);
 
-  return <Cart.Provider value={{ state, dispatch }}>{children}</Cart.Provider>;
+  return (
+    <Cart.Provider value={{ state, dispatch, productState, productDispatch }}>
+      {children}
+    </Cart.Provider>
+  );
 }
 
 export default Context;
