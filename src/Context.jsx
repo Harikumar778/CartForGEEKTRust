@@ -48,7 +48,8 @@ function productReducer(state, { type, payload }) {
   switch (type) {
     case "SORT_BY_GENDER":
       return {
-        ...state
+        ...state,
+        gender: !state.gender
       };
   }
 }
@@ -57,7 +58,7 @@ function Context({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const [productState, productDispatch] = useReducer(productReducer, {
-    gender: ""
+    gender: "Men"
   });
 
   useEffect(() => {
