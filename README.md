@@ -1,2 +1,2 @@
-# CartForGEEKTRust
+# ShoppingCart
 Created with CodeSandbox
