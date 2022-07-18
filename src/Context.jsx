@@ -48,8 +48,7 @@ function productReducer(state, { type, payload }) {
   switch (type) {
     case "SORT_BY_GENDER":
       return {
-        ...state,
-        gender: !state.gender
+        ...state.filter((item)=> item.gender==='Men')
       };
   }
 }
